@@ -9,6 +9,7 @@
       <CounterVue v-if="activePage == 'counter'" />
       <FormVue v-if="activePage == 'form'" />
       <SettingsVue v-if="activePage == 'settings'" />
+      <ToDoCardVue v-if="activePage == 'todolist'"/>
     </div>
   </div>
 </template>
@@ -18,12 +19,14 @@
 import CounterVue from "./components/Counter.vue";
 import FormVue from './components/Form.vue';
 import SettingsVue from './components/Settings.vue';
+import ToDoCardVue from "./components/ToDoCard.vue";
 export default {
   name: 'App',
   components: {
     CounterVue,
     FormVue,
     SettingsVue,
+    ToDoCardVue,
 },
   data(){
     return{
@@ -41,6 +44,11 @@ export default {
         {
           slug: 'settings',
           title: 'Réglages',
+          active: false,
+        },
+        {
+          slug: 'todolist',
+          title: 'ToDoList',
           active: false,
         },
       ],
@@ -61,6 +69,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style >
